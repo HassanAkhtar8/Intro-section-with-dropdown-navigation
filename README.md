@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Repository URL]()
-- Live Site URL: [Live Site]()
+- Solution URL: [Repository URL](https://github.com/HassanAkhtar8/Intro-section-with-dropdown-navigation)
+- Live Site URL: [Live Site](https://hassanakhtar8.github.io/Intro-section-with-dropdown-navigation/)
 
 
 ### Built with
@@ -41,11 +41,7 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 
 
-
-
-
 ## Author
 
-- Github Profile - [Add your name here]()
-- Frontend Mentor - [@yourusername]()
-
+- Github Profile - [HassanAkhtar8](https://github.com/HassanAkhtar8)
+- Frontend Mentor - [@HassanAkhtar8](https://www.frontendmentor.io/profile/HassanAkhtar8)
