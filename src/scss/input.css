@@ -33,170 +33,264 @@ a:active {
 body {
   box-sizing: border-box;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: hsl(221, 100%, 96%);
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: grid;
+  overflow-x: hidden;
 }
-#root main {
-  background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
-  padding: 1.2rem;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
+#root header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#root header .snap {
+  margin-right: auto;
+}
+#root header .menu {
+  z-index: 100;
+}
+#root header .menu:hover {
+  cursor: pointer;
+}
+#root header nav {
+  padding: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+  z-index: 99;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+#root header nav.navbar-in {
+  transform: translateX(0);
+}
+#root header nav .features {
+  display: flex;
+  justify-content: flex-start;
+}
+#root header nav .features img {
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 1rem;
+}
+#root header nav .features p {
+  font-weight: 600;
+}
+#root header nav .features p:hover {
+  opacity: 0.9;
+}
+#root header nav .company li {
+  margin: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(0, 0%, 41%);
+  cursor: pointer;
+}
+#root header nav .company li:hover {
+  opacity: 0.5;
+  text-decoration: underline;
+}
+#root header nav h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: hsl(0, 0%, 41%);
+}
+#root header nav h2:hover {
+  cursor: pointer;
+  color: black;
+}
+#root header nav .arrow {
+  cursor: pointer;
+  display: flex;
+  width: 50%;
+}
+#root header nav .arrow .arrow-icon {
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: 0.4rem;
+  margin-left: 0.5rem;
+}
+#root header nav p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: hsl(0, 0%, 41%);
+}
+#root header nav p:hover {
+  cursor: pointer;
+  color: black;
+}
+#root header nav button {
+  cursor: pointer;
+  width: 90%;
+  height: 2.5rem;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: hsl(0, 0%, 41%);
+  font-size: 1rem;
+  font-weight: 800;
+}
+#root header nav button:hover {
+  color: hsl(0, 0%, 8%);
+}
+#root header nav ul {
+  margin: 1rem;
+  list-style: none;
+}
+#root header nav ul li {
+  margin: 0.5rem;
+  cursor: pointer;
 }
 #root main h1 {
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 2rem auto;
-  font-weight: 600;
-  color: hsl(241, 100%, 89%);
-}
-#root main h2 {
-  width: -moz-fit-content;
-  width: fit-content;
   font-size: 2rem;
-  font-weight: 800;
-  margin: 1rem auto;
-  color: hsl(0, 0%, 100%);
-}
-#root main p {
-  color: hsl(241, 100%, 89%);
+  text-align: center;
   font-weight: 700;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 1rem auto;
-  padding: 0 2rem;
-  margin: 1rem auto 4rem auto;
-  line-height: 1.5rem;
+  margin: 1rem;
+  color: hsl(0, 0%, 8%);
 }
-#root main .circle {
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: linear-gradient(to bottom, hsla(241, 72%, 46%, 0), hsl(256, 72%, 46%));
-  margin: 0 auto;
-}
-#root main .circle h2 {
-  color: hsl(221, 100%, 96%);
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin: 0;
-}
-#root main .circle p {
-  color: hsl(241, 100%, 89%);
-  font-weight: 700;
-  margin: 1rem auto;
-}
-#root aside h2 {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin: 2rem 1rem;
-  color: hsl(224, 30%, 27%);
-}
-#root aside .summary-container {
-  margin: 2rem;
-}
-#root aside .summary-container .summary {
+#root main .hero {
   width: 100%;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
+}
+#root main p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: hsl(0, 0%, 41%);
+}
+#root main button {
+  display: block;
+  margin: 2rem auto;
   padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-#root aside .summary-container .summary .inline h3 {
+  border: none;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 98%);
+  font-size: 1.2rem;
   font-weight: 600;
-}
-#root aside .summary-container .summary .span h3 {
-  font-weight: 600;
-  color: hsl(224, 30%, 27%);
-}
-#root aside .summary-container .summary .span span {
-  font-weight: 500;
-  color: gray;
-  font-weight: 600;
-}
-#root aside .summary-container .summary .inline-block .icon {
-  margin-right: 0.8rem;
-}
-#root aside .summary-container .summary .inline-block h3 {
-  display: inline;
-}
-#root aside .summary-container #reaction {
-  background-color: hsla(0, 100%, 67%, 0.1);
-}
-#root aside .summary-container #reaction .inline h3 {
-  color: hsla(0, 100%, 67%, 0.8);
-}
-#root aside .summary-container #reaction:hover {
-  background-image: linear-gradient(to right, hsla(0, 100%, 67%, 0.1), hsla(0, 100%, 67%, 0.8));
-}
-#root aside .summary-container #memory {
-  background-color: hsla(39, 100%, 56%, 0.1);
-}
-#root aside .summary-container #memory .inline h3 {
-  color: hsla(39, 100%, 56%, 0.8);
-}
-#root aside .summary-container #memory:hover {
-  background-image: linear-gradient(to right, hsla(39, 100%, 56%, 0.1), hsla(39, 100%, 56%, 0.8));
-}
-#root aside .summary-container #verbal {
-  background-color: hsla(166, 100%, 37%, 0.1);
-}
-#root aside .summary-container #verbal .inline h3 {
-  color: hsla(166, 100%, 37%, 0.8);
-}
-#root aside .summary-container #verbal:hover {
-  background-image: linear-gradient(to right, hsla(166, 100%, 37%, 0.1), hsla(166, 100%, 37%, 0.8));
-}
-#root aside .summary-container #visual {
-  background-color: hsla(234, 85%, 45%, 0.1);
-}
-#root aside .summary-container #visual .inline h3 {
-  color: hsla(234, 85%, 45%, 0.8);
-}
-#root aside .summary-container #visual:hover {
-  background-image: linear-gradient(to right, hsla(234, 85%, 45%, 0.1), hsla(234, 85%, 45%, 0.8));
-}
-#root aside .btn {
-  width: 100%;
-  height: 4rem;
-  border-radius: 2rem;
-  background-color: hsl(224, 30%, 27%);
-  color: hsl(0, 0%, 100%);
-  font-weight: 600;
-  font-size: 1.5rem;
-  border: transparent;
-}
-#root aside .btn:hover {
+  border: 0.1rem solid hsl(0, 0%, 8%);
   cursor: pointer;
-  background-image: linear-gradient(to bottom, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+#root main button:hover {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(0, 0%, 8%);
+}
+#root footer {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 5rem;
 }
 
-@media screen and (min-width: 45em) {
+@media (min-width: 40em) {
   #root {
-    width: 80%;
-    flex-direction: row;
+    grid-template-areas: "head head" "main main" "footer footer";
   }
   #root main {
-    width: 50%;
-    border-bottom-left-radius: 0;
-    border-radius: 1rem;
+    padding: 0 2rem;
+    grid-area: main;
+    display: flex;
+    flex-direction: row-reverse;
   }
-  #root aside {
+  #root main .hero {
     width: 50%;
-    background-color: hsl(0, 0%, 100%);
-    box-shadow: 1rem 1rem 1rem hsl(241, 100%, 89%);
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+  }
+  #root main .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #root main .hero-text p {
+    text-align: left;
+    padding-right: 2rem;
+  }
+  #root header {
+    grid-area: head;
+    padding: 0.5rem;
+    align-items: center;
+  }
+  #root header .snap {
+    z-index: 90;
+    margin-top: 1rem;
+    width: 4rem;
+    height: 2rem;
+    margin: 0;
+    margin-right: 1.5rem;
+  }
+  #root header nav {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    transform: translateX(0);
+    position: relative;
+    height: auto;
+  }
+  #root header nav .arrow .arrow-icon {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  #root header nav .list-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+  }
+  #root header nav .list-container h2 {
+    margin: 0 auto;
+  }
+  #root header nav .list-container div {
+    margin-right: 0.5rem;
+  }
+  #root header nav .list-container .flex {
+    display: flex;
+  }
+  #root header nav .list-container .flex h2 {
+    margin-right: 1rem;
+  }
+  #root header nav .list-container .company {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    top: calc(100% - 0.8rem);
+    border-radius: 0.5rem;
+  }
+  #root header nav .list-container .feature-container {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0.1rem 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    top: calc(100% - 0.8rem);
+    left: -2rem;
+    border-radius: 0.5rem;
+  }
+  #root header nav button {
+    width: 5rem;
+    margin-left: 0.75rem;
+  }
+  #root header nav .register {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #root header nav .register P {
+    margin: 0 auto;
+  }
+  #root header .menu {
+    display: none;
+  }
+  #root footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    grid-area: footer;
   }
 }/*# sourceMappingURL=input.css.map */
